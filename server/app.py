@@ -21,7 +21,7 @@ from helpers.networks import get_graph_path, model_wh
 app = Flask(__name__)
 app.config['DEBUG'] = True
 app.config['STATIC_FOLDER'] = os.path.join(settings.BASE_DIR, 'static')
-CORS(app, resources={r"/critique": {"origins": "https://localhost:5000"}})
+CORS(app, resources={r"/critique": {"origins": "http://localhost:5000"}})
 
 # Load model
 pose_estimator = TfPoseEstimator(graph_path=settings.GRAPH_PATH, target_size=settings.PROCESSING_DIMS)
@@ -161,6 +161,8 @@ def critique():
 
 if __name__ == '__main__':
     app.run(
+        host='0.0.0.0',
+        port=5000,
         threaded=True,
-        ssl_context=('cert.pem', 'key.pem')
+        # ssl_context=('cert.pem', 'key.pem'),
     )

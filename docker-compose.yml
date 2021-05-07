@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  python:
+    build: .
+    volumes:
+      - './:/phormatics'
+    ports:
+      - '5000:5000'

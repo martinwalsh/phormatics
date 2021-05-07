@@ -1,0 +1,7 @@
+**
+!poetry.lock
+!pyproject.toml
+!notebook.ipynb
+!data/
+!server/
+!tfjs/

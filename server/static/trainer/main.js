@@ -39,7 +39,7 @@ var interval;
 
 var currentWorkout = "none";
 
-const serverURL = "https://localhost:5000/critique";
+const serverURL = "http://localhost:5000/critique";
 var img, resultImg;
 
 const CONNECTIONS = [[3, 4, "#ff007f"],
@@ -128,7 +128,7 @@ function upload(){
 
     $.ajax({
         url: serverURL,
-        headers: {'Access-Control-Allow-Origin': 'https://localhost:5000' },
+        headers: {'Access-Control-Allow-Origin': 'http://localhost:5000' },
         type: 'POST',
         data: {
             image: img,
